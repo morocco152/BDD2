@@ -7,6 +7,9 @@ const ClienteController = require('../controllers/clientes.controller');
 router.get('/ventas', function(req, res, next) {
   res.render('venta');
 });
+router.get('/productos', function (req, res){
+  res.render('venta');
+});
 
 router.get('/clientes', ClienteController.formularioCrearCliente);
 router.post('/clientes', ClienteController.crearCliente);
