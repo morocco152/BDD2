@@ -1,10 +1,11 @@
 /*
 llamar al archivo de modelo
 crear una clase para interactuar con el modelo
- */
+*/
+
 const ClienteModelo = require('../models/clientes');
 
-class Cliente{
+class Cliente {
 
     static formularioCrearCliente(req, res){
         res.render('clientes');
@@ -33,4 +34,4 @@ class Cliente{
     }
 }
 
-module.exports = Cliente
+module.exports = Cliente;
