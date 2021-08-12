@@ -9,7 +9,8 @@ router.get('/ventas', function(req, res, next) {
   res.render('venta');
 });
 
-router.get('/dashboard', function (req, res){ //productos
+router.get('/', function (req, res){ //productos
+  console.log("Ingresando a panel:", req.cookies.idusuario);
   res.render('dashboard');
 });
 
@@ -49,6 +50,8 @@ router.get('/clientes', ClienteController.formularioCrearCliente);
 router.post('/clientes', ClienteController.crearCliente);
 
 router.get('/ingresar', function (req, res) {
-  res.render('ingresar');
+  console.log("INGRESANDO MEDIANTE GET", req.query);
+  res.render('ingresar', { error: req.query.error === "si"? "si":"no" });
 });
+
 module.exports = router;

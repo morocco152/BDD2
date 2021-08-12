@@ -36,22 +36,25 @@
 </head>
 <body>
 <div class="login-form">
-    <form action="index.html" method="post">
-        <h2 class="text-center">Log in</h2>       
+    <form action="/ingresar" method="post">
+        <h2 class="text-center">Log in</h2>
+        <% if (error === "si"){%>
+            <h3>Sus credenciales son errones</h3>
+        <%}%>
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Username" required="required">
+            <input type="text" name="usuario" class="form-control" placeholder="Username" required="required">
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password" required="required">
+            <input type="password" name="clave" class="form-control" placeholder="Password" required="required">
         </div>
-        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+        <select name="sucursal" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
             <option selected>Select a Sucursal</option>
             <option value="1">Cero</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
+            <option value="2">One</option>
+            <option value="3">Two</option>
         </select>     
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">Log in</button>
+            <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
         </div>
     </form>
 </div>
