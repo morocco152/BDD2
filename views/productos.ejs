@@ -137,48 +137,50 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Clientes</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Productos</h1>
                     </div>
 
 
                 </div>
                 <!-- /.container-fluid -->
 
-                <form action="/clientes" method="post">
+                <form action="/productos" method="post">
                     <div class="row justify-content-center">
                         <div class="col-10">
+
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <label for="nombreCliente">Nombre</label>
-                                    <input type="text" class="form-control form-control-user" id="nombreCliente" name="nombreCliente">
+                                    <label for="nombreCliente">IdProducto</label>
+                                    <input type="text" step="any" class="form-control form-control-user" id="IdProducto" name="IdProducto" placeholder="001">
                                 </div>
                                 <div class="col-sm-6">
-                                    <label for="apellidosCliente">Apellidos</label>
-                                    <input type="text" class="form-control form-control-user" id="apellidosCliente" name="apellidosCliente">
+                                    <label for="apellidosCliente">Precio</label>
+                                    <input type="text" class="form-control form-control-user" id="PrecioProducto" name="PrecioProducto" placeholder="99.99">
                                 </div>
+                                <div class="col-sm-6">
+                                    <label for="apellidosCliente">Stock</label>
+                                    <input type="text" class="form-control form-control-user" id="StockProducto" name="StockProducto" placeholder="45">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tipoComprobante" class="">Estado</label>
+                                <select class="form-control form-control-user" id="EstadoProducto" name="EstadoProducto" placeholder="Disponible">
+                                    <option value="1">Disponible</option>
+                                    <option value="2">No disponible</option>
+                                </select>
                             </div>
                 
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <label for="dniCliente">DNI</label>
-                                    <input type="text" class="form-control form-control-user" id="dniCliente" name="dniCliente">
+                                    <label for="dniCliente">Nombre del Producto</label>
+                                    <input type="text" class="form-control form-control-user" id="NombreProducto" name="NombrePro" placeholder="Licuadora">
                                 </div>
                                 <div class="col-sm-6">
-                                    <label for="telefonoCliente">Telefono</label>
-                                    <input type="text" class="form-control form-control-user" id="telefonoCliente" name="telefonoCliente">
+                                    <label for="telefonoCliente">Descripcion</label>
+                                    <input type="text" class="form-control form-control-user" id="DescripcionProducto" name="DescripcionProducto" placeholder="3 Velocidades">
                                 </div>
                             </div>
-                
-                            <div class="form-group">
-                                <label for="direccionCliente" class="">Dirección</label>
-                                <input type="text" class="form-control form-control-user" id="direccionCliente" name="direccionCliente">
-                            </div>
-                
-                            <div class="form-group">
-                                <label for="emailCliente" class="">Email</label>
-                                <input type="email" class="form-control form-control-user" id="emailCliente" name="emailCliente">
-                            </div>
-                
                         </div>
                     </div>
                 
@@ -202,120 +204,35 @@
                         <table class="table table-bordered table-hover table-striped">
                             <thead>
                             <tr>
-                                <td>ID CLIENTE</td>
-                                <td>DNI</td>
+                                <td>ID PRODUCTO</td>
                                 <td>NOMBRE</td>
-                                <td>APELLIDOS</td>
-                                <td>CORREO</td>
+                                <td>DESCRIPCION</td>
+                                <td>STOCK</td>
+                                <td>PRECIO</td>
+                                <td>ESTADO</td>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td>12</td>
-                                <td>6546565</td>
-                                <td>EL PEPE</td>
-                                <td>APELLDIS</td>
-                                <td>micorre@gmail.com</td>
+                                <td>1</td>
+                                <td>LICUADORA</td>
+                                <td>3 VELOCIDADES</td>
+                                <td>56</td>
+                                <td>77.99</td>
+                                <td>AVAIBLE</td>
                             </tr>
                             <tr>
-                                <td>12</td>
-                                <td>6546565</td>
-                                <td>EL PEPE</td>
-                                <td>APELLDIS</td>
-                                <td>micorre@gmail.com</td>
+                                <td>2</td>
+                                <td>SECADORA</td>
+                                <td>3 VELOCITY</td>
+                                <td>561</td>
+                                <td>199.99</td>
+                                <td>UNAVAIBLE</td>
                             </tr>
-                            <tr>
-                                <td>12</td>
-                                <td>6546565</td>
-                                <td>EL PEPE</td>
-                                <td>APELLDIS</td>
-                                <td>micorre@gmail.com</td>
-                            </tr>
-                            <tr>
-                                <td>12</td>
-                                <td>6546565</td>
-                                <td>EL PEPE</td>
-                                <td>APELLDIS</td>
-                                <td>micorre@gmail.com</td>
-                            </tr>
-                            <tr>
-                                <td>12</td>
-                                <td>6546565</td>
-                                <td>EL PEPE</td>
-                                <td>APELLDIS</td>
-                                <td>micorre@gmail.com</td>
-                            </tr>
-                            </tbody>
                         </table>
                     </div>
                 </div>
-                <!-- Scroll to Top Button-->
-                <a class="scroll-to-top rounded" href="#page-top">
-                <i class="fas fa-angle-up"></i>
-                </a>
-                
-                <!-- Logout Modal-->
-                <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Lista de productos</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row justify-content-center">
-                        <div class="col-6 mb-2">
-                            <input type="text" class="form-control form-control-user"
-                                   id="exampleInputEmail" aria-describedby="emailHelp"
-                                   placeholder="Ingrese nombre del producto">
-                            <button class="btn btn-success">
-                                BUSCAR
-                            </button>
-                        </div>
-                        <div class="col-12">
-                            <table class="table table-bordered table-hover table-striped">
-                                <thead>
-                                <tr>
-                                    <td>ID</td>
-                                    <td>CANTIDAD</td>
-                                    <td>DESCRIPCIÓN</td>
-                                    <td>COSTO</td>
-                                    <td></td>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>213</td>
-                                    <td>Producto A</td>
-                                    <td>12</td>
-                                    <td>
-                                        <button class="btn btn-success">
-                                            SELECCIONAR
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>3</td>
-                                    <td>Producto F</td>
-                                    <td>12</td>
-                                    <td>
-                                        <button class="btn btn-success">
-                                            SELECCIONAR
-                                        </button>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">CERRAR</button>
+                <!-- Here the code -->  
             </div>
         </div>
     </div>
