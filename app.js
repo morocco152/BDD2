@@ -41,3 +41,11 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+// pasos 
+// git status 
+// git add . 
+// git commit -m "mensaje"
+// git push origin main  --mandar 
+
+// git pull origin main -- traer

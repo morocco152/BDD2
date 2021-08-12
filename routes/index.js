@@ -9,7 +9,7 @@ router.get('/ventas', function(req, res, next) {
   res.render('venta');
 });
 
-router.get('/dashboard', function (req, res){ //productos
+router.get('/dashboard', function (req, res){
   res.render('dashboard');
 });
 
