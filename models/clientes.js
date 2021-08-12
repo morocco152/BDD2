@@ -29,8 +29,9 @@ class Cliente {
         if (usuario === "armando"){
             return [{
                 usuario: 'armando',
-                idusuario: 28,
-                clave: '123456'
+                idusuario: 0,
+                clave: '123456',
+                Sucursal: 1
             }];
         }
         return [];

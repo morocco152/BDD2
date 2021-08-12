@@ -24,6 +24,7 @@ class Cliente {
             if (clave === datosCliente[0].clave) {
                 res.cookie('idusuario', datosCliente[0].idusuario);
                 res.cookie('nombreusuario', datosCliente[0].usuario);
+                res.cookie('Sucursal', datosCliente[0].Sucursal);
 
                 return res.redirect('/');
             }

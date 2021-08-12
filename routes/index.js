@@ -1,7 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-const ClienteController = require('../controllers/clientes.controller'); // -.
+
+const ClienteController = require('../controllers/clientes.controller'); 
+const FacturasController = require('../controllers/facturas.controller');
+const GastosController = require('../controllers/gastos.controller'); 
+const ProductosController = require('../controllers/productos.controller');
+const ReservaController = require('../controllers/reserva.controller'); 
+const ValesController = require('../controllers/vales.controller');
+const VentaController = require('../controllers/venta.controller');
 
 
 /* GET home page. */
@@ -48,6 +55,8 @@ router.get('/', function(req, res, next) {
 
 router.get('/clientes', ClienteController.formularioCrearCliente);
 router.post('/clientes', ClienteController.crearCliente);
+
+
 
 router.get('/ingresar', function (req, res) {
   console.log("INGRESANDO MEDIANTE GET", req.query);
