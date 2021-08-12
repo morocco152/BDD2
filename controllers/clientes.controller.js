@@ -1,8 +1,6 @@
 /*
 llamar al archivo de modelo
-
 crear una clase para interactuar con el modelo
-
  */
 const ClienteModelo = require('../models/clientes');
 
