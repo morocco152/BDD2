@@ -27,75 +27,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">POS Admin <sup>2</sup></div> <!--here there is the sucursal-->
-            </a>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="/dashboard">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link" href="/ventas">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Ventas</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/clientes">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Clientes</span></a>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="/vales">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Vales</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="/productos">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Productos</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="/facturas">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Facturas</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="/gasto">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Gasto</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="/reserva">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Reserva</span></a>
-            </li>
-        </ul>
-        <!-- End of Sidebar -->
+        <% include includes/sidebar.ejs %>
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
