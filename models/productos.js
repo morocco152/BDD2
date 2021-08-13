@@ -56,6 +56,22 @@ class Producto {
         });
     }
 
+    static obtenerUnProducto(idProducto){
+        return new Promise((resolve, reject) => {
+            sql.open(connection, function (err, conn) {
+                var pm = conn.procedureMgr();
+                pm.callproc('getProductobyID',[idProducto],function(err, results, output) {
+                    if(err){
+                      console.log(err);
+                      return reject([]);
+                    }else{
+                        console.log("MODEL ==>", results[0]);
+                        resolve(results[0]);
+                    }   
+                })
+            });
+        });
+    }
 
 
     static deleteProducto(idProducto) {

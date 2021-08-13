@@ -12,6 +12,16 @@ class Producto {
         res.render('productos', {listaProductos: listaProductos, estado, usuario: req.cookies.nombreusuario});
     }
 
+    static async obtenerProductosLista(req, res){
+        let {estado} = req.query;
+        if (!estado){
+            estado = 'normal'
+        }
+        const listaProductos = await ProductoModelo.obtenerProductos();
+
+        res.json({listaProductos});
+    }
+
     static async crearProducto(req, res){
         const {IdProducto, NombrePro, DescripcionProducto, PrecioProducto, StockProducto, EstadoProducto} = req.body;
         console.log("DATOS PARA EL NUEVO PRODUCTO:", req.body);
@@ -33,6 +43,17 @@ class Producto {
             return res.redirect('/productos?estado=errorBorrar');
         });
         return res.redirect('/productos');
+    }
+
+    static async obtenerUnProducto(req, res){
+        const {idProducto} = req.params;
+
+        console.log("DATOS", req.params);
+        const productoBorrado = await ProductoModelo.obtenerUnProducto(idProducto).catch(err => {
+            console.log("Hay un error al borrar un producto", err);
+            return res.json({});
+        });
+        return res.json(productoBorrado);
     }
 
     static async editarProducto(req, res){

@@ -249,6 +249,18 @@ AS
 RETURN  
 GO
 
+
+------ get prodcuto ppor id ---- 
+
+CREATE PROCEDURE getProductobyID 
+@IdProducto int
+AS    
+   SET NOCOUNT ON;  
+   SELECT * FROM PRODUCTO_FH0 where = IdProducto = @IdProducto;  
+RETURN  
+GO
+
+
 CREATE PROCEDURE validacion
 	@usuario varchar(20),
 	@contraseña varchar(20)

@@ -27,6 +27,8 @@ router.get('/', Autenticar.autenticar, function (req, res){ //productos
 });
 
 router.get('/productos', ProductosController.obtenerProductos);
+router.get('/unproducto/:idProducto', ProductosController.obtenerUnProducto);
+router.get('/productos/lista', ProductosController.obtenerProductosLista);
 router.get('/clientes', ClienteController.obtenerCliente);
 router.get('/vales', ValesController.obtenerVale);
 router.get('/gasto', GastosController.obtenerGasto);

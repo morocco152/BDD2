@@ -15,5 +15,4 @@ router.get('/vales/:idVale', Autenticar.autenticar, ValeController.deleteVale);
 router.get('/gastos/:idGasto',  Autenticar.autenticar, GastoController.deleteGasto);
 
 
-
 module.exports = router;

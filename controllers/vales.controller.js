@@ -34,7 +34,7 @@ class Vale {
 
     static async deleteVale(req, res){
 
-        const {IdVale} = req.params;
+        const {idVale} = req.params;
         console.log("Datos", req.params);
         const ValeBorrado = await ValeModelo.deleteVale(idVale).catch(err => {
             console.log("error al borrar ", err);

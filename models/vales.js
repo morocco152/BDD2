@@ -61,7 +61,7 @@ class Vale {
                 var pm = conn.procedureMgr();
                 pm.callproc('deleteVale',[idVale] , function(err, results, output) {
                     if(err){
-                      console.log(err);
+                      console.log("-- MODEL: ", err);
                       return reject([]);
                     }else{
                         console.log("MODEL ==>", results);
