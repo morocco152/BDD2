@@ -17,6 +17,7 @@ const connection = require('../config/config');
 class Vale {
 
     static crearVale(IdVale, IdEmpleado, Descripcion, Descuento, Vigencia){
+
         return new Promise((resolve, reject) => {
             sql.open(connection, function (err, conn) {
                 var pm = conn.procedureMgr();
@@ -31,9 +32,11 @@ class Vale {
                 })
             });
         });
+        
     }
 
     static obtenerVale(){
+
         return new Promise((resolve, reject) => {
             sql.open(connection, function (err, conn) {
                 var pm = conn.procedureMgr();
@@ -48,15 +51,15 @@ class Vale {
                 })
             });
         });
-    }
 
-    // falta gaa elimnar stored prpocedure
+    }
     
     static deleteVale(idVale){
+
         return new Promise((resolve, reject) => {
             sql.open(connection, function (err, conn) {
                 var pm = conn.procedureMgr();
-                pm.callproc('deleteCliente',[idVale] , function(err, results, output) {
+                pm.callproc('deleteVale',[idVale] , function(err, results, output) {
                     if(err){
                       console.log(err);
                       return reject([]);
@@ -67,6 +70,7 @@ class Vale {
                 })
             });
         });
+        
     }
 
 }

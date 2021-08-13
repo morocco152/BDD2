@@ -29,8 +29,8 @@ class Cliente {
 
         console.log("Cliente creado: ", nuevoCliente);
         res.redirect('/clientes');
+        
     }
-
 
     static async deleteCliente(req, res){
 

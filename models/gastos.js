@@ -16,12 +16,12 @@ const connection = require('../config/config');
 
 class Gasto {
     
-    static CrearGasto(IdGasto, Nombre_Gasto, Descripcion_Gasto, Fecha, ID_Sucursal) {
+    static CrearGasto(IdGasto, NombreGasto, DescripcionGasto, FechaGasto, IDSucursal) {
 
         return new Promise((resolve, reject) => {
             sql.open(connection, function (err, conn) {
                 var pm = conn.procedureMgr();
-                pm.callproc('addVale',[IdVale, IdEmpleado, Descripcion, Descuento, Vigencia], function(err, results, output) {
+                pm.callproc('addGasto',[IdGasto, NombreGasto, DescripcionGasto, FechaGasto, IDSucursal], function(err, results, output) {
                     if(err){
                       console.log(err);
                       return reject([]);
@@ -36,11 +36,11 @@ class Gasto {
     }
 
     static ObtenerGasto() {
-        return new Promise((resolve, reject) => {
 
+        return new Promise((resolve, reject) => {
             sql.open(connection, function (err, conn) {
                 var pm = conn.procedureMgr();
-                pm.callproc('getVale', function(err, results, output) {
+                pm.callproc('getGasto', function(err, results, output) {
                     if(err){
                       console.log(err);
                       return reject([]);
@@ -50,12 +50,28 @@ class Gasto {
                     }   
                 })
             });
-            
         });
 
     }
     
-    static EliminarGasto() {}
+    static deleteGasto(idGasto) {
+
+        return new Promise((resolve, reject) => {
+            sql.open(connection, function (err, conn) {
+                var pm = conn.procedureMgr();
+                pm.callproc('deleteGasto',[idGasto] , function(err, results, output) {
+                    if(err){
+                      console.log(err);
+                      return reject([]);
+                    }else{
+                        console.log("MODEL ==>", results);
+                        resolve(results);
+                    }   
+                })
+            });
+        });
+
+    }
     
 }
 

@@ -6,7 +6,8 @@ create procedure addSucursal
 	@Dirección varchar(50)
 as 
 	insert into SUCURSAL_FH1 values (@ID_Sucursal,@Nombre,@Dirección);
-	insert into [DESKTOP-V566VCU\MSSQLSERVER02].[TiendaX].[dbo].SUCURSAL_FH1_R2 values (@ID_Sucursal,@Nombre,@Dirección);
+	insert into [DESKTOP-V566VCU\MSSQLSERVER02].[TiendaX].[dbo].
+    values (@ID_Sucursal,@Nombre,@Dirección);
 go 
 
 EXEC addSucursal @ID_Sucursal=1,@Nombre='Sucursal 0',@Dirección='Av. La Molina #503';

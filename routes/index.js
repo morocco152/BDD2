@@ -29,6 +29,7 @@ router.get('/', Autenticar.autenticar, function (req, res){ //productos
 router.get('/productos', ProductosController.obtenerProductos);
 router.get('/clientes', ClienteController.obtenerCliente);
 router.get('/vales', ValesController.obtenerVale);
+router.get('/gasto', GastosController.obtenerGasto);
 
 router.get('/facturas', function (req, res){
   res.render('facturas', {usuario: req.cookies.nombreusuario});
@@ -46,23 +47,11 @@ router.get('/clientes', function (req, res){
   res.render('clientes', {usuario: req.cookies.nombreusuario});
 });
 
-router.get('/verproductos', ProductosController.obtenerProductos);
-
-
-
 
 //index 
 router.get('/', Autenticar.autenticar, function(req, res, next) {
   res.send('indexm');
 });
-
-
-
-
-
-//router.get('/clientes', ClienteController.formularioCrearCliente);
-router.post('/clientes', ClienteController.crearCliente);
-
 
 
 router.get('/ingresar', function (req, res) {

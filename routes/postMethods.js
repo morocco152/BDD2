@@ -5,6 +5,7 @@ const ClienteController = require('../controllers/clientes.controller');
 const TrabajadorController = require('../controllers/trabajadores.controller');
 const ProductosController = require('../controllers/productos.controller');
 const ValeController = require('../controllers/vales.controller');
+const GastoController = require('../controllers/gastos.controller');
 
 // AQUÍ IRAN NUESTROS MÉTODOS - POST
 
@@ -21,8 +22,11 @@ router.post("/productos/actualizar/:idProducto", ProductosController.actualizarP
 // clientes
 router.post('/clientes', ClienteController.crearCliente);
 
-// valles
+// vales
 router.post('/vales', ValeController.crearVale);
+
+// gastos
+router.post('/gastos', GastoController.crearGasto);
 
 
 module.exports = router;

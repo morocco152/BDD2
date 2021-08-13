@@ -268,7 +268,6 @@ begin
     select * from EMPLEADO_FH0 where Usuario = @usuario and Contrasenia = @contraseña
 end
 
-
 ---------------- DELETE ----------------------------------
 
 create procedure deleteProducto

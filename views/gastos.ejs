@@ -70,18 +70,22 @@
                                     <label for="DescripcionGasto">Descripción</label>
                                     <input type="text" class="form-control form-control-user" id="DescripcionGasto" name="DescripcionGasto" placeholder="13 escobas">
                                 </div>
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <label for="DescripcionGasto">ID Gasto</label>
+                                    <input type="text" class="form-control form-control-user" id="IDSucursal" name="IDSucursal" placeholder="13 escobas">
+                                </div>
                             </div>
                         </div>
                     </div>
                  
                     <div class="row justify-content-center">
                         <div class="col-2">
-                            <a href="#" class="btn btn-success btn-icon-split">
+                            <button type="submit" class="btn btn-success btn-icon-split">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-check"></i>
                                             </span>
                                 <span class="text">GUARDAR</span>
-                            </a>
+                            </button>
                         </div>
                     </div>
 
@@ -96,23 +100,28 @@
                             <tr>
                                 <td>ID GASTO</td>
                                 <td>NOMBRE</td>
-                                <td>FECHA</td>
                                 <td>DESCRIPCION</td>
+                                <td>FECHA</td>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>ESCOBAS</td>
-                                <td>09/11/2019</td>
-                                <td>13 ESCOBAS</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>TRAPEADOR</td>
-                                <td>11/02/2000</td>
-                                <td>5 TRAPEADORES</td>
-                            </tr>
+                                <% for (let idx = 0; idx < listaGastos.length; idx++){ %>
+                                    <tr>
+                                        <td><%= listaGastos[idx].IdGasto %></td>
+                                        <td><%= listaGastos[idx].Nombre_Gasto %></td>
+                                        <td><%= listaGastos[idx].Descripcion_Gasto %></td>
+                                        <td><%= listaGastos[idx].Fecha %></td>
+                                        <td>
+                                            <a href="/gastos/<%=listaGastos[idx].IdGasto %>" type="submit" class="btn btn-danger btn-icon-split">
+                                                <span class="icon text-white-50">
+                                                    <i class="fas fa-check"></i>
+                                                </span>
+                                                <span class="text">BORRAR</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <%}%>
+                            </tbody>
                         </table>
                     </div>
                 </div>
