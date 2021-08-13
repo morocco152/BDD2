@@ -64,30 +64,21 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>08/09/2000</td>
-                                <td>BOLETA DE NOTA</td>
-                                <td>EXX4001</td>
-                                <td>CORRELATIVO</td>
-                                <td>15%</td>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>13/09/2010</td>
-                                <td>COMPROBANTE/td>
-                                <td>EXX4002</td>
-                                <td>CORRELATIVO</td>
-                                <td>15%</td>
-                                <td>0</td>
-                            </tr>
+                                <% for (let idx = 0; idx < listaFacturas.length; idx++){ %>
+                                    <tr>
+                                        <td><%= listaFacturas[idx].IdFactura %></td>
+                                        <td><%= listaFacturas[idx].IdCliente></td>
+                                        <td><%= listaFacturas[idx].IdEmpleado %></td>
+                                        <td><%= listaFacturas[idx].IdProducto %></td>
+                                        <td><%= listaFacturas[idx].Fecha %></td>
+                                        <td><%= listaFacturas[idx].TipoComprobante %></td>
+                                        <td><%= listaFacturas[idx].Serie %></td>
+                                        <td><%= listaFacturas[idx].Correlativo %></td>
+                                        <td><%= listaFacturas[idx].IGV %></td>
+                                        <td><%= listaFacturas[idx].ID_Sucursal %></td>
+                                    </tr>
+                                <%}%>
+                            </tbody>
                         </table>
                     </div>
                 </div>

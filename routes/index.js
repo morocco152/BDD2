@@ -32,6 +32,7 @@ router.get('/productos/lista', ProductosController.obtenerProductosLista);
 router.get('/clientes', ClienteController.obtenerCliente);
 router.get('/vales', ValesController.obtenerVale);
 router.get('/gasto', GastosController.obtenerGasto);
+router.get('/facturas', FacturasController.obtenerFacturas);
 
 router.get('/facturas', function (req, res){
   res.render('facturas', {usuario: req.cookies.nombreusuario});
