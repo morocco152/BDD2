@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 
 const indexRouter = require('./routes/index');
 const postMethodsRouter = require('./routes/postMethods');
+const deleteMethodsRouter = require('./routes/deleteMethods');
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // las rutas
 app.use('/', indexRouter);
 app.use('/', postMethodsRouter);
+app.use('/', deleteMethodsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

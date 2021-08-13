@@ -42,36 +42,29 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Productos</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Editar Producto</h1>
                     </div>
 
 
                 </div>
                 <!-- /.container-fluid -->
 
-                <% if (estado==="errorCrear"){%>
-                    <h3 class="text-danger">Error al crear producto</h3>
-                <%}%>
-
-                <% if (estado==="productoCreado"){%>
-                    <h3 class="text-success">Nuevo producto creado con éxito</h3>
-                <%}%>
-                <form action="/productos" method="post">
+                <form action="/productos/actualizar/<%= datos.IdProducto %>" method="post">
                     <div class="row justify-content-center">
                         <div class="col-10">
 
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <label for="nombreCliente">IdProducto</label>
-                                    <input type="text" step="any" class="form-control form-control-user" id="IdProducto" name="IdProducto" placeholder="001">
+                                    <input type="text" step="any" class="form-control form-control-user" id="IdProducto" name="IdProducto" placeholder="001" value="<%= datos.IdProducto %>" readonly>
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="apellidosCliente">Precio</label>
                                     <input type="text" class="form-control form-control-user" id="PrecioProducto" name="PrecioProducto" placeholder="99.99">
                                 </div>
                                 <div class="col-sm-6">
-                                    <label for="apellidosCliente">Stock</label>
-                                    <input type="text" class="form-control form-control-user" id="StockProducto" name="StockProducto" placeholder="45">
+                                    <label for="StockProducto">Stock</label>
+                                    <input type="text" class="form-control form-control-user" id="StockProducto" name="StockProducto" placeholder="45" value="<%= datos.stockProducto %>">
                                 </div>
                             </div>
 
@@ -86,7 +79,7 @@
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <label for="dniCliente">Nombre del Producto</label>
-                                    <input type="text" class="form-control form-control-user" id="NombreProducto" name="NombrePro" placeholder="Licuadora">
+                                    <input type="text" class="form-control form-control-user" id="NombreProducto" name="NombrePro" placeholder="Licuadora"  value="<%= datos.nombreProducto %>">
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="telefonoCliente">Descripcion</label>
@@ -108,55 +101,7 @@
                     </div>
 
                 </form>
-                
-                <hr>
-                <% if (estado==="errorBorrar"){%>
-                    <h3 class="text-danger">Error al borrar producto</h3>
-                <%}%>    
-                <div class="row justify-content-center">
-                    <div class="col-11">
-                        <table class="table table-bordered table-hover table-striped">
-                            <thead>
-                            <tr>
-                                <td>ID PRODUCTO</td>
-                                <td>NOMBRE</td>
-                                <td>DESCRIPCION</td>
-                                <td>STOCK</td>
-                                <td>PRECIO</td>
-                                <td>ESTADO</td>
-                                <td></td>
-                            </tr>
-                            </thead>
-                            <tbody>
-                                <% for (let idx = 0; idx < listaProductos.length; idx++){ %>
-                                    <tr>
-                                        <td><%= listaProductos[idx].IdProducto %></td>
-                                        <td><%= listaProductos[idx].Nombre_Producto %></td>
-                                        <td><%= listaProductos[idx].Descripcion_Producto %></td>
-                                        <td><%= listaProductos[idx].Stock %></td>
-                                        <td><%= listaProductos[idx].Precio %></td>
-                                        <td><%= listaProductos[idx].Estado === "avaible"? "DISPONIBLE": "NO HAY" %></td>
-                                        <td>
-                                            <a href="/productos/<%= listaProductos[idx].IdProducto %>" type="submit" class="btn btn-danger btn-icon-split">
-                                                <span class="icon text-white-50">
-                                                    <i class="fas fa-check"></i>
-                                                </span>
-                                                <span class="text">BORRAR</span>
-                                            </a>
-                                            <form action="/productos/editar/<%= listaProductos[idx].IdProducto %>" method="post">
-                                                <button type="submit" class="btn btn-warning btn-icon-split">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-check"></i>
-                                                    </span>
-                                                    <span class="text">EDITAR</span>
-                                                </button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                <%}%>
-                        </table>
-                    </div>
-                </div>
+            
                 <!-- Here the code -->  
             </div>
         </div>

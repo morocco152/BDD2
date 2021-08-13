@@ -7,24 +7,21 @@ const ClienteModelo = require('../models/clientes');
 
 class Cliente {
 
-    static formularioCrearCliente(req, res){
-        res.render('clientes');
-    }
-
-    static crearCliente(req, res){
-        res.send("Cliente creado" + JSON.stringify(req.body));
-    }
-
-    static logIn(req, res){
+    static async logIn(req, res){
+        
         const { usuario, clave, sucursal } = req.body;
         // despues de haber validado a nuestro usuario
-        const datosCliente = ClienteModelo.obtenerUsuario(usuario);
+        const datosCliente = await ClienteModelo.obtenerUsuario(usuario,clave);
+       
+        console.log("===>", datosCliente);
 
         if (datosCliente.length > 0) {
-            if (clave === datosCliente[0].clave) {
-                res.cookie('idusuario', datosCliente[0].idusuario);
-                res.cookie('nombreusuario', datosCliente[0].usuario);
-                res.cookie('Sucursal', datosCliente[0].Sucursal);
+
+            if (clave === datosCliente[0].Contrasenia) {
+                
+                res.cookie('idusuario', datosCliente[0].IdEmpleado);
+                res.cookie('nombreusuario', datosCliente[0].Nombre);
+                res.cookie('Sucursal', datosCliente[0].ID_Sucursal);
 
                 return res.redirect('/');
             }

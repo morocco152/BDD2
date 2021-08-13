@@ -8,7 +8,7 @@
 const sql = require('msnodesqlv8');
 const connection = require('../config/config');
 
-class Cliente {
+class Trabajador {
 
     static obtenerUsuario(usuario,clave){
         return new Promise((resolve, reject) => {
@@ -29,4 +29,4 @@ class Cliente {
 
 }
 
-module.exports = Cliente;
+module.exports = Trabajador;
