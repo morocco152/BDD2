@@ -26,11 +26,9 @@ router.get('/', Autenticar.autenticar, function (req, res){ //productos
   res.render('dashboard', {usuario: req.cookies.nombreusuario});
 });
 
-router.get('/vales', function (req, res){
-  res.render('vales', {usuario: req.cookies.nombreusuario});
-});
-
 router.get('/productos', ProductosController.obtenerProductos);
+router.get('/clientes', ClienteController.obtenerCliente);
+router.get('/vales', ValesController.obtenerVale);
 
 router.get('/facturas', function (req, res){
   res.render('facturas', {usuario: req.cookies.nombreusuario});
@@ -48,27 +46,6 @@ router.get('/clientes', function (req, res){
   res.render('clientes', {usuario: req.cookies.nombreusuario});
 });
 
-
-
-
-// pruebas 
-
-router.get('/getproductos', function (req, res){
-
-  sql.open(connection, function (err, conn) {
-    var pm = conn.procedureMgr();
-    pm.callproc('getProducto', function(err, results, output) {
-        if(err)
-          console.log(err)
-        else 
-          console.log(results)
-    })
-  });
-
-  res.send('getproductos raa!');
-
-});
-
 router.get('/verproductos', ProductosController.obtenerProductos);
 
 
@@ -84,7 +61,7 @@ router.get('/', Autenticar.autenticar, function(req, res, next) {
 
 
 //router.get('/clientes', ClienteController.formularioCrearCliente);
-//router.post('/clientes', ClienteController.crearCliente);
+router.post('/clientes', ClienteController.crearCliente);
 
 
 
@@ -94,11 +71,13 @@ router.get('/ingresar', function (req, res) {
 });
 
 router.get('/salir', function (req, res){
+  
   res.cookie('idusuario', '');
   res.cookie('nombreusuario', '');
   res.cookie('Sucursal', '');
 
   return res.redirect('/ingresar');
 });
+
 
 module.exports = router;

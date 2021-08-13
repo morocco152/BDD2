@@ -81,12 +81,12 @@
                 
                     <div class="row justify-content-center">
                         <div class="col-2">
-                            <a href="#" class="btn btn-success btn-icon-split">
+                            <button type="submit" class="btn btn-success btn-icon-split">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-check"></i>
                                             </span>
                                 <span class="text">GUARDAR</span>
-                            </a>
+                            </button>
                         </div>
                     </div>
 
@@ -107,20 +107,24 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>15% DE DESCUENTO</td>
-                                <td>15%</td>
-                                <td>08/09/2000</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>1</td>
-                                <td>30%% DE DESCUENTO</td>
-                                <td>30%</td>
-                                <td>11/11/1999</td>
-                            </tr>
+                                <% for (let idx = 0; idx < listaVales.length; idx++){ %>
+                                    <tr>
+                                        <td><%= listaVales[idx].IdVale %></td>
+                                        <td><%= listaVales[idx].IdEmpleado %></td>
+                                        <td><%= listaVales[idx].Descripcion %></td>
+                                        <td><%= listaVales[idx].Descuento %></td>
+                                        <td><%= listaVales[idx].Vigencia %></td>
+                                        <td>
+                                            <a href="/vales/<%= listaVales[idx].IdCliente %>" type="submit" class="btn btn-danger btn-icon-split">
+                                                <span class="icon text-white-50">
+                                                    <i class="fas fa-check"></i>
+                                                </span>
+                                                <span class="text">BORRAR</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <%}%>
+                            </tbody>
                         </table>
                     </div>
                 </div>

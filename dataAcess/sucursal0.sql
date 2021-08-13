@@ -258,7 +258,7 @@ begin
 	select COUNT(*) from EMPLEADO_FH0 where Usuario = @usuario and Contrasenia=@contraseña
 end
 
-CREATE PROCEDURE Authentication_worker 
+CREATE PROCEDURE authentication_worker 
     @usuario varchar(20),
     @contraseña varchar(20)
 
@@ -267,5 +267,47 @@ begin
     SET NOCOUNT ON;
     select * from EMPLEADO_FH0 where Usuario = @usuario and Contrasenia = @contraseña
 end
+
+
+---------------- DELETE ----------------------------------
+
+create procedure deleteProducto
+    @IdProducto int
+as 
+    delete from PRODUCTO_FH0 where IdProducto = @IdProducto;
+    delete from [DESKTOP-V566VCU\MSSQLSERVER01].[TiendaX].[dbo].PRODUCTO_FH0_R1 where IdProducto = @IdProducto;
+go
+
+
+create procedure deleteCliente 
+    @IdCliente int
+as 
+    delete from CLIENTE_FH0 where IdCliente = @IdCliente;
+    delete from [DESKTOP-V566VCU\MSSQLSERVER01].[TiendaX].[dbo].CLIENTE_FH0_R1 where IdCliente = @IdCliente;
+go
+
+CREATE PROCEDURE deleteVale
+@IdVale INT
+AS
+    DELETE FROM VALE_FH0 WHERE IdVale= @IdVale
+    DELETE FROM  [DESKTOP-V566VCU\MSSQLSERVER01].[TiendaX].[dbo].VALE_FH0_R1  WHERE IdVale = @IdVale
+GO
+
+CREATE PROCEDURE deleteFactura
+@IdFactura INT
+AS
+    DELETE FROM FACTURA_FH0 WHERE IdFactura= @IdFactura
+    DELETE FROM  [DESKTOP-V566VCU\MSSQLSERVER01].[TiendaX].[dbo].FACTURA_FH0_R1  WHERE IdFactura = @IdFactura
+GO
+
+CREATE PROCEDURE deleteGasto
+@IdGasto INT
+AS
+    DELETE FROM GASTO_FH0 WHERE IdGasto = @IdGasto
+    DELETE FROM  [DESKTOP-V566VCU\MSSQLSERVER01].[TiendaX].[dbo].GASTO_FH0_R1  WHERE IdGasto = @IdGasto
+GO
+
+
+
 
 

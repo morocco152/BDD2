@@ -3,7 +3,7 @@ llamar al archivo de modelo
 crear una clase para interactuar con el modelo
 */
 
-const TrabajadorModelo = require('../models/clientes');
+const TrabajadorModelo = require('../models/trabajadores');
 
 class Trabajador {
 

@@ -55,33 +55,42 @@
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <label for="nombreCliente">Nombre</label>
-                                    <input type="text" class="form-control form-control-user" id="nombreCliente" name="nombreCliente">
+                                    <input type="text" class="form-control form-control-user" id="nombreCliente" name="Nombre">
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="apellidosCliente">Apellidos</label>
-                                    <input type="text" class="form-control form-control-user" id="apellidosCliente" name="apellidosCliente">
+                                    <input type="text" class="form-control form-control-user" id="apellidosCliente" name="Apellido">
                                 </div>
                             </div>
                 
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <label for="idCliente">idCliente</label>
+                                    <input type="text" class="form-control form-control-user" id="dniCliente" name="IdCliente">
+                                </div>
+                                <div class="col-sm-6 mb-3 mb-sm-0">
                                     <label for="dniCliente">DNI</label>
-                                    <input type="text" class="form-control form-control-user" id="dniCliente" name="dniCliente">
+                                    <input type="text" class="form-control form-control-user" id="dniCliente" name="DNI">
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="telefonoCliente">Telefono</label>
-                                    <input type="text" class="form-control form-control-user" id="telefonoCliente" name="telefonoCliente">
+                                    <input type="text" class="form-control form-control-user" id="telefonoCliente" name="Telefono">
                                 </div>
                             </div>
                 
                             <div class="form-group">
                                 <label for="direccionCliente" class="">Dirección</label>
-                                <input type="text" class="form-control form-control-user" id="direccionCliente" name="direccionCliente">
+                                <input type="text" class="form-control form-control-user" id="direccionCliente" name="Direccion">
                             </div>
                 
                             <div class="form-group">
                                 <label for="emailCliente" class="">Email</label>
-                                <input type="email" class="form-control form-control-user" id="emailCliente" name="emailCliente">
+                                <input type="email" class="form-control form-control-user" id="emailCliente" name="Email">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="idSucursal" class="">Sucursal</label>
+                                <input type="text" class="form-control form-control-user" id="emailCliente" name="ID_Sucursal">
                             </div>
                 
                         </div>
@@ -89,12 +98,12 @@
                 
                     <div class="row justify-content-center">
                         <div class="col-2">
-                            <a href="#" class="btn btn-success btn-icon-split">
+                            <button type="submit" class="btn btn-success btn-icon-split">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-check"></i>
                                             </span>
                                 <span class="text">GUARDAR</span>
-                            </a>
+                            </button>
                         </div>
                     </div>
 
@@ -108,48 +117,34 @@
                             <thead>
                             <tr>
                                 <td>ID CLIENTE</td>
-                                <td>DNI</td>
                                 <td>NOMBRE</td>
-                                <td>APELLIDOS</td>
-                                <td>CORREO</td>
+                                <td>APELLIDO</td>
+                                <td>DNI</td>
+                                <td>DIRECCION</td>
+                                <td>TELEFONO</td>
+                                <td>EMAIL</td>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>12</td>
-                                <td>6546565</td>
-                                <td>EL PEPE</td>
-                                <td>APELLDIS</td>
-                                <td>micorre@gmail.com</td>
-                            </tr>
-                            <tr>
-                                <td>12</td>
-                                <td>6546565</td>
-                                <td>EL PEPE</td>
-                                <td>APELLDIS</td>
-                                <td>micorre@gmail.com</td>
-                            </tr>
-                            <tr>
-                                <td>12</td>
-                                <td>6546565</td>
-                                <td>EL PEPE</td>
-                                <td>APELLDIS</td>
-                                <td>micorre@gmail.com</td>
-                            </tr>
-                            <tr>
-                                <td>12</td>
-                                <td>6546565</td>
-                                <td>EL PEPE</td>
-                                <td>APELLDIS</td>
-                                <td>micorre@gmail.com</td>
-                            </tr>
-                            <tr>
-                                <td>12</td>
-                                <td>6546565</td>
-                                <td>EL PEPE</td>
-                                <td>APELLDIS</td>
-                                <td>micorre@gmail.com</td>
-                            </tr>
+                                <% for (let idx = 0; idx < listaClientes.length; idx++){ %>
+                                    <tr>
+                                        <td><%= listaClientes[idx].IdCliente %></td>
+                                        <td><%= listaClientes[idx].Nombre %></td>
+                                        <td><%= listaClientes[idx].Apellido %></td>
+                                        <td><%= listaClientes[idx].DNI %></td>
+                                        <td><%= listaClientes[idx].Direccion %></td>
+                                        <td><%= listaClientes[idx].Telefono %></td>
+                                        <td><%= listaClientes[idx].Email %></td>
+                                        <td>
+                                            <a href="/clientes/<%= listaClientes[idx].IdCliente %>" type="submit" class="btn btn-danger btn-icon-split">
+                                                <span class="icon text-white-50">
+                                                    <i class="fas fa-check"></i>
+                                                </span>
+                                                <span class="text">BORRAR</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <%}%>
                             </tbody>
                         </table>
                     </div>
