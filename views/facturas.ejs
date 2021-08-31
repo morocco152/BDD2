@@ -77,6 +77,14 @@
                                         <td><%= listaFacturas[idx].IGV %></td>
                                         <td><%= listaFacturas[idx].ID_Sucursal %></td>
                                     </tr>
+                                    <td>
+                                        <a href="/vales/<%=listaFacturas[idx].IdFactura %>" type="submit" class="btn btn-danger btn-icon-split">
+                                            <span class="icon text-white-50">
+                                                <i class="fas fa-check"></i>
+                                            </span>
+                                            <span class="text">BORRAR</span>
+                                        </a>
+                                    </td>
                                 <%}%>
                             </tbody>
                         </table>

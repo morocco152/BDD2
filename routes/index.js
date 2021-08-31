@@ -1,9 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-const sql = require('msnodesqlv8');
-const connection = require('../config/config');
-
 const Autenticar = require('../middlewares/autenticar');
 
 const TrabajadorController = require('../controllers/trabajadores.controller'); 
@@ -34,9 +31,11 @@ router.get('/vales', ValesController.obtenerVale);
 router.get('/gasto', GastosController.obtenerGasto);
 router.get('/facturas', FacturasController.obtenerFacturas);
 
+/*
 router.get('/facturas', function (req, res){
   res.render('facturas', {usuario: req.cookies.nombreusuario});
 });
+
 
 router.get('/gasto', function (req, res){
   res.render('gastos', {usuario: req.cookies.nombreusuario});
@@ -56,6 +55,7 @@ router.get('/', Autenticar.autenticar, function(req, res, next) {
   res.send('indexm');
 });
 
+*/
 
 router.get('/ingresar', function (req, res) {
   console.log("INGRESANDO MEDIANTE GET", req.query);

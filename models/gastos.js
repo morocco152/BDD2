@@ -19,6 +19,7 @@ class Gasto {
     static CrearGasto(IdGasto, NombreGasto, DescripcionGasto, FechaGasto, IDSucursal) {
 
         return new Promise((resolve, reject) => {
+
             sql.open(connection, function (err, conn) {
                 var pm = conn.procedureMgr();
                 pm.callproc('addGasto',[IdGasto, NombreGasto, DescripcionGasto, FechaGasto, IDSucursal], function(err, results, output) {
@@ -31,6 +32,7 @@ class Gasto {
                     }   
                 })
             });
+
         });
 
     }
@@ -38,6 +40,7 @@ class Gasto {
     static ObtenerGasto() {
 
         return new Promise((resolve, reject) => {
+
             sql.open(connection, function (err, conn) {
                 var pm = conn.procedureMgr();
                 pm.callproc('getGasto', function(err, results, output) {
@@ -50,6 +53,7 @@ class Gasto {
                     }   
                 })
             });
+            
         });
 
     }
@@ -57,6 +61,7 @@ class Gasto {
     static deleteGasto(idGasto) {
 
         return new Promise((resolve, reject) => {
+
             sql.open(connection, function (err, conn) {
                 var pm = conn.procedureMgr();
                 pm.callproc('deleteGasto',[idGasto] , function(err, results, output) {
@@ -69,6 +74,7 @@ class Gasto {
                     }   
                 })
             });
+
         });
 
     }

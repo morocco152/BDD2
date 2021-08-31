@@ -14,7 +14,7 @@ const GastoModelo = require('../models/gastos');
 
 class Gasto {
 
-    static async obtenerGasto(){
+    static async obtenerGasto(req, res){
 
         let {estado} = req.query;
         if (!estado){

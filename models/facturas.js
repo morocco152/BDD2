@@ -1,9 +1,7 @@
 // importamos la libreias 
 
 /*
-    crear factura
     obtener factura 
-    delete factura
 */
 
 const sql = require('msnodesqlv8');
@@ -11,9 +9,10 @@ const connection = require('../config/config');
 
 class Factura {
     
-    static obtenerFacturas() { 
+    static  obtenerFacturas() { 
 
         return new Promise((resolve, reject) => {
+
             sql.open(connection, function (err, conn) {
                 var pm = conn.procedureMgr();
                 pm.callproc('getFactura', function(err, results, output) {
@@ -26,6 +25,7 @@ class Factura {
                     }   
                 })
             });
+
         });
 
     }
